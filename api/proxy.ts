@@ -17,12 +17,11 @@ export default async function handler(request: VercelRequest, response: VercelRe
 
     try {
         const aiResponse = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${apiKey}`,
             {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'X-goog-api-key': apiKey
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     contents: [
